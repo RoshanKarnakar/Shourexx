@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Certifications | Shourex Global</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "surface-container": "#e7eeff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-tint": "#4a5f82",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-container": "#798fb4",
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#111c2c",
+                        "surface-dim": "#cfdaf1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-fixed": "#011b3b",
+                        "on-secondary-fixed": "#241a00",
+                        "primary": "#00122b",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#0f2747",
+                        "tertiary-fixed": "#e1e2e4",
+                        "primary-fixed-dim": "#b2c7f0",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474e",
+                        "secondary-container": "#fed65b",
+                        "inverse-primary": "#b2c7f0",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d8e3fa",
+                        "on-tertiary-container": "#8c8e90",
+                        "tertiary": "#101214",
+                        "on-secondary-container": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#74777f",
+                        "on-primary-fixed-variant": "#324769",
+                        "outline-variant": "#c4c6cf",
+                        "primary-fixed": "#d5e3ff",
+                        "secondary": "#735c00",
+                        "tertiary-container": "#242729",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-background": "#111c2c",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#263142"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-table": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "data-table": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .certification-card:hover .badge-overlay {
+            opacity: 1;
+        }
+
+        .nav-item-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00122b;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+    <!-- Backdrop for Mobile Sidebar -->
+    <div id="sidebar-backdrop"
+        class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-[100] transition-opacity duration-300 opacity-0 pointer-events-none"
+        aria-hidden="true"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar"
+        class="fixed top-0 bottom-0 right-0 w-80 max-w-[85vw] bg-surface dark:bg-primary z-[101] shadow-2xl p-6 flex flex-col transition-transform duration-300 ease-in-out translate-x-full"
+        role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <span
+                    class="font-headline-md text-sm sm:text-headline-sm text-primary dark:text-inverse-on-surface font-bold tracking-tight truncate">Shourex
+                    Global</span>
+            </div>
+            <button id="mobile-sidebar-close"
+                class="text-primary dark:text-inverse-on-surface p-2 hover:bg-surface-container dark:hover:bg-primary-container rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20"
+                aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+
+        <!-- Navigation Links Stack -->
+        <nav class="flex flex-col gap-4 mt-8">
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="index.html">Home</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="about.html">About Us</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="products.html">Products</a>
+            <a class="text-primary dark:text-secondary-fixed font-bold border-l-4 border-primary dark:border-secondary-fixed pl-3 py-2 text-body-lg"
+                href="certificate.html">Certifications</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="blog.html">Blog</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Request Quote Button inside Sidebar -->
+        <div class="mt-auto pt-6 border-t border-outline-variant/30">
+            <button
+                class="w-full bg-primary text-on-primary py-4 rounded-sm font-label-caps uppercase hover:bg-primary-container transition-all active:scale-95">
+                Request Quote
+            </button>
+        </div>
+    </div>
+
+    <!-- TopNavBar -->
+    <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
+        <div
+            class="flex items-center justify-between gap-2 sm:gap-3 h-16 sm:h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img alt="Shourex Global" class="h-10 sm:h-12 w-auto object-contain shrink-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFEOmB8EOGtDvKPb3Dv8Q2qG6sCKN_6bvmOrakS8T6wbCevo2W69wAL7qTFVFkqaHZPWBuWMKAQFgsFeBEjOR46Uw1-5Xnqi8EJPVi0k8ur0K-g7TlI0LnR5EgY0urxKELfZgkbQJt7-G4JP_gXNQssVth-3_0qk5EkotdXfdXgH3pCSGOu-BCmj2WqoGIu6zv563eqThGQmMeoTHoNMJJjPEPyn_MCdhFT-Sj-RA8zhFR9Bs_e8pMlTP-LmACL4cSFy7_2gw6j-A">
+                <span
+                    class="font-headline-sm text-sm sm:text-headline-sm font-bold tracking-tight text-primary truncate">Shourex
+                    Global</span>
+            </div>
+            <nav class="hidden lg:flex items-center gap-stack-lg">
+                <a class="font-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="index.html">Home</a>
+                <a class="font-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="about.html">About Us</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-body-md text-body-md"
+                    href="products.html">Products</a>
+                <a class="font-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200"
+                    href="certificate.html">Certifications</a>
+                <a class="font-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="blog.html">Blog</a>
+                <a class="font-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="contact.html#contact-form"
+                    class="hidden lg:block bg-primary text-on-primary px-3 py-2 sm:px-6 sm:py-2.5 rounded-lg font-label-caps uppercase tracking-wider text-[10px] sm:text-label-caps hover:bg-primary-container transition-all active:scale-95">
+                    Request Quote
+                </a>
+                <!-- Hamburger Menu Button (visible on mobile/tablet <1024px) -->
+                <button id="mobile-menu-open"
+                    class="block lg:hidden text-primary p-2 focus:outline-none focus:ring-2 focus:ring-primary/20 rounded transition-all"
+                    aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24 sm:pt-20">
+        <!-- Hero Section -->
+        <section class="py-section-gap bg-surface-container-low overflow-hidden relative">
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center relative z-10">
+                <div class="space-y-stack-md">
+                    <span
+                        class="font-label-caps text-label-caps text-secondary uppercase tracking-widest bg-secondary-fixed/30 px-3 py-1 inline-block">Global
+                        Standards</span>
+                    <h1 class="font-display-lg text-display-lg text-primary leading-tight">Uncompromising Quality,
+                        <br>Certified Globally.
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        At Shourex Global, our commitment to excellence is backed by rigorous international
+                        certifications. We ensure every product meets the highest standards of safety, hygiene, and
+                        compliance.
+                    </p>
+                </div>
+                <div class="relative flex justify-center items-center h-full">
+                    <!-- Geometric Decorative Element -->
+                    <div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div
+                            class="w-24 h-24 bg-white shadow-sm border border-outline-variant flex items-center justify-center p-4">
+                            <span class="material-symbols-outlined text-primary text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                        </div>
+                        <div
+                            class="w-24 h-24 bg-white shadow-sm border border-outline-variant flex items-center justify-center p-4 mt-8">
+                            <span class="material-symbols-outlined text-primary text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">security</span>
+                        </div>
+                        <div
+                            class="w-24 h-24 bg-white shadow-sm border border-outline-variant flex items-center justify-center p-4">
+                            <span class="material-symbols-outlined text-primary text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">public</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Certifications Grid -->
+        <section class="py-section-gap bg-white">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center mb-16">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-4">Our Accreditations</h2>
+                    <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-gutter">
+                    <!-- ISO 9001 -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold">ISO 9001</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Quality Management</h3>
+                    </div>
+                    <!-- HACCP -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold">HACCP</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Hazard Analysis</h3>
+                    </div>
+                    <!-- FDA -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold uppercase">FDA</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">US Food &amp; Drug Admin
+                        </h3>
+                    </div>
+                    <!-- APEDA -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold">APEDA</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Export Development</h3>
+                    </div>
+                    <!-- FSSAI -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold">FSSAI</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Food Safety India</h3>
+                    </div>
+                    <!-- GMP -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold uppercase">GMP</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Good Manufacturing</h3>
+                    </div>
+                    <!-- Organic -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold uppercase">Organic</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Natural Certification</h3>
+                    </div>
+                    <!-- Halal -->
+                    <div
+                        class="certification-card group flex flex-col items-center p-8 border border-outline-variant rounded-sm hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-32 h-32 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div
+                                class="bg-surface-container w-full h-full flex items-center justify-center border-4 border-primary/10">
+                                <span class="font-headline-sm text-primary font-bold uppercase">Halal</span>
+                            </div>
+                        </div>
+                        <h3 class="font-label-caps text-label-caps text-primary text-center">Global Compliant</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Detailed Compliance Sections (Bento-style layout) -->
+        <section class="py-section-gap bg-surface">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                    <!-- Quality Control -->
+                    <div
+                        class="md:col-span-7 bg-white p-6 md:p-12 border border-outline-variant flex flex-col justify-between">
+                        <div>
+                            <span class="material-symbols-outlined text-secondary text-3xl mb-6">biotech</span>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-6">Quality Control Procedures
+                            </h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                                Our multi-stage quality assurance protocol begins at the farm level and continues
+                                through to the final dispatch. Every batch undergoes rigorous sensory evaluation and
+                                chemical analysis in our state-of-the-art laboratory to ensure it meets our "Delivering
+                                Quality Beyond Borders" promise.
+                            </p>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 font-data-table text-data-table text-primary">
+                                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                Raw material inspection upon arrival
+                            </li>
+                            <li class="flex items-center gap-3 font-data-table text-data-table text-primary">
+                                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                Periodic moisture and purity testing
+                            </li>
+                            <li class="flex items-center gap-3 font-data-table text-data-table text-primary">
+                                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                Third-party lab validation for export batches
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Food Safety -->
+                    <div class="md:col-span-5 bg-primary p-6 md:p-12 text-on-primary flex flex-col">
+                        <span class="material-symbols-outlined text-secondary-fixed text-3xl mb-6">restaurant</span>
+                        <h3 class="font-headline-sm text-headline-sm mb-6">Food Safety Standards</h3>
+                        <p class="font-body-md text-body-md text-on-primary-fixed-variant mb-8">
+                            Adherence to HACCP guidelines and international food hygiene regulations ensures that our
+                            products are free from contaminants and safe for global consumption.
+                        </p>
+                        <div class="mt-auto pt-8 border-t border-white/10">
+                            <div class="text-secondary-fixed font-bold text-headline-sm">100%</div>
+                            <div class="text-on-primary-fixed-variant text-label-caps uppercase tracking-tighter">
+                                Hygiene Compliance</div>
+                        </div>
+                    </div>
+                    <!-- Export Compliance -->
+                    <div class="md:col-span-5 bg-surface-container-highest p-6 md:p-12 border border-outline-variant">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-6">shop</span>
+                        <h3 class="font-headline-sm text-headline-sm text-primary mb-6">Export Compliance</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            We navigate the complexities of global trade with expertise. From sanitary and phytosanitary
+                            (SPS) measures to country-specific import regulations, Shourex Global maintains perfect
+                            compliance records across 40+ countries.
+                        </p>
+                    </div>
+                    <!-- International Documentation -->
+                    <div class="md:col-span-7 bg-white p-6 md:p-12 border border-outline-variant">
+                        <div class="flex items-start justify-between mb-8">
+                            <div>
+                                <span class="material-symbols-outlined text-primary text-3xl mb-6">description</span>
+                                <h3 class="font-headline-md text-headline-md text-primary">International Documentation
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+                            <div class="p-4 border-l-4 border-secondary bg-surface">
+                                <p class="font-label-caps text-label-caps text-primary uppercase mb-2">Logistics</p>
+                                <p class="font-body-md text-on-surface-variant">Bill of Lading, Packing Lists, Invoices
+                                </p>
+                            </div>
+                            <div class="p-4 border-l-4 border-secondary bg-surface">
+                                <p class="font-label-caps text-label-caps text-primary uppercase mb-2">Quality</p>
+                                <p class="font-body-md text-on-surface-variant">Certificate of Analysis, Lab Reports</p>
+                            </div>
+                            <div class="p-4 border-l-4 border-secondary bg-surface">
+                                <p class="font-label-caps text-label-caps text-primary uppercase mb-2">Origin</p>
+                                <p class="font-body-md text-on-surface-variant">Certificate of Origin, APEDA Docs</p>
+                            </div>
+                            <div class="p-4 border-l-4 border-secondary bg-surface">
+                                <p class="font-label-caps text-label-caps text-primary uppercase mb-2">Health</p>
+                                <p class="font-body-md text-on-surface-variant">Phytosanitary Certificates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action -->
+        <section class="py-section-gap">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+                <div class="bg-surface-container-lowest border border-outline-variant p-16 shadow-lg max-w-4xl mx-auto">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-6">Need specific documentation for your
+                        region?</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                        Our expert trade compliance team can assist you with region-specific certification requirements
+                        and custom documentation needs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-gutter justify-center">
+                        <button
+                            class="bg-primary text-on-primary px-10 py-4 rounded-sm font-label-caps uppercase text-label-caps hover:bg-primary-container transition-all">
+                            Consult Our Team
+                        </button>
+                        <button
+                            class="border border-primary text-primary px-10 py-4 rounded-sm font-label-caps uppercase text-label-caps hover:bg-surface-container transition-all">
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Floating WhatsApp Button -->
+    <a class="fixed bottom-10 right-10 z-[60] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform duration-300"
+        href="https://wa.me/918108109622" target="_blank">
+        <svg fill="white" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.385 1.44 5.216 1.441 5.499 0 9.973-4.475 9.976-9.974 0-2.664-1.038-5.166-2.922-7.051-1.885-1.885-4.384-2.924-7.047-2.924-5.501 0-9.975 4.475-9.978 9.974 0 2.035.617 4.021 1.782 5.716l-.1.147-1.013 3.697 3.786-.993.116.067zm11.39-4.674c-.311-.156-1.845-.91-2.134-1.015-.289-.105-.499-.156-.709.156-.21.312-.813 1.015-1.002 1.234-.189.22-.378.247-.689.091-.311-.156-1.314-.484-2.503-1.545-.924-.825-1.548-1.844-1.729-2.156-.181-.312-.019-.481.136-.635.139-.139.311-.364.467-.546.156-.182.208-.312.311-.52.105-.208.053-.39-.026-.546-.079-.156-.709-1.711-.971-2.34-.255-.612-.515-.529-.709-.538-.182-.009-.391-.01-.599-.01-.208 0-.546.078-.831.39-.285.312-1.088 1.066-1.088 2.601 0 1.535 1.115 3.018 1.272 3.226.156.208 2.195 3.352 5.318 4.701.742.32 1.321.512 1.771.654.746.237 1.425.204 1.961.124.598-.091 1.845-.754 2.107-1.444.262-.689.262-1.282.184-1.404-.079-.123-.289-.196-.599-.352z">
+            </path>
+        </svg>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-primary-container border-t border-primary-fixed-dim/20">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto text-on-primary">
+            <div class="col-span-12 lg:col-span-4 space-y-stack-md">
+                <div class="flex items-center gap-4">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-primary">Shourex Global</span>
+                </div>
+                <p class="font-body-md text-on-primary-fixed-variant max-w-sm">
+                    Connecting premium Indian produce with global demand through excellence in logistics and
+                    uncompromised quality.
+                </p>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Navigation</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="about.html">About Us</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="products.html">Products</a></li>
+                    <li><a class="text-on-primary font-bold underline"
+                            href="certificate.html">Certifications</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Legal</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-span-12 lg:col-span-4 space-y-4">
+                <h6 class="font-label-caps text-gold">Global Office</h6>
+                <p class="text-on-primary-fixed-variant font-body-md">
+                    Pune, Maharashtra, India<br />
+                    Email: akash.chaudhari@shourex.com<br />
+                    Phone: +91 810 810 9622
+                </p>
+                <div class="flex gap-4 mt-stack-md">
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="https://www.google.com/maps/place/Shourex+Global/@18.520452,73.856787,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2bf2d5f8b8f8f:0x8d9d9d9d9d9d9d9d!8m2!3d18.520452!4d73.856787"
+                        target="_blank">
+                        <span class="material-symbols-outlined text-white">public</span>
+                    </a>
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="mailto:akash.chaudhari@shourex.com">
+                        <span class="material-symbols-outlined text-white">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-12 pt-12 border-t border-white/10 text-center">
+                <p class="font-body-md text-on-primary-fixed-variant">
+                    © 2026 Shourex Global – Delivering Quality Beyond Borders. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95', 'opacity-80');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95', 'opacity-80');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95', 'opacity-80');
+            });
+        });
+
+        // Simple Reveal on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.certification-card').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+
+        // Mobile Sidebar Logic
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-sidebar-close');
+
+        const openSidebar = () => {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+            openBtn.setAttribute('aria-expanded', 'true');
+            closeBtn.focus();
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+            openBtn.setAttribute('aria-expanded', 'false');
+            openBtn.focus();
+        };
+
+        if (openBtn && closeBtn && backdrop) {
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            backdrop.addEventListener('click', closeSidebar);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('translate-x-0')) {
+                    closeSidebar();
+                }
+            });
+
+            // Focus trapping inside sidebar
+            const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+            sidebar.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    const focusableElements = sidebar.querySelectorAll(focusableElementsSelector);
+                    if (focusableElements.length === 0) return;
+
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+
+                    if (e.shiftKey) { // Shift + Tab
+                        if (document.activeElement === firstElement) {
+                            lastElement.focus();
+                            e.preventDefault();
+                        }
+                    } else { // Tab
+                        if (document.activeElement === lastElement) {
+                            firstElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

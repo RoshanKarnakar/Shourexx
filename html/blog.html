@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Blog | Shourex Global – Delivering Quality Beyond Borders</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "surface-container": "#e7eeff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-tint": "#4a5f82",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-container": "#798fb4",
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#111c2c",
+                        "surface-dim": "#cfdaf1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-fixed": "#011b3b",
+                        "on-secondary-fixed": "#241a00",
+                        "primary": "#00122b",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#0f2747",
+                        "tertiary-fixed": "#e1e2e4",
+                        "primary-fixed-dim": "#b2c7f0",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474e",
+                        "secondary-container": "#fed65b",
+                        "inverse-primary": "#b2c7f0",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d8e3fa",
+                        "on-tertiary-container": "#8c8e90",
+                        "tertiary": "#101214",
+                        "on-secondary-container": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#74777f",
+                        "on-primary-fixed-variant": "#324769",
+                        "outline-variant": "#c4c6cf",
+                        "primary-fixed": "#d5e3ff",
+                        "secondary": "#735c00",
+                        "tertiary-container": "#242729",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-background": "#111c2c",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#263142"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-table": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "data-table": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+
+        .transition-standard {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background-color: #f9f9ff;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface">
+    <!-- Backdrop for Mobile Sidebar -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-[100] transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="fixed top-0 bottom-0 right-0 w-80 max-w-[85vw] bg-surface dark:bg-primary z-[101] shadow-2xl p-6 flex flex-col transition-transform duration-300 ease-in-out translate-x-full" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <span
+                    class="font-headline-md text-sm sm:text-headline-sm text-primary dark:text-inverse-on-surface font-bold tracking-tight truncate">Shourex
+                    Global</span>
+            </div>
+            <button id="mobile-sidebar-close" class="text-primary dark:text-inverse-on-surface p-2 hover:bg-surface-container dark:hover:bg-primary-container rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20" aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        
+        <!-- Navigation Links Stack -->
+        <nav class="flex flex-col gap-4 mt-8">
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="index.html">Home</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="about.html">About Us</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="products.html">Products</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="certificate.html">Certifications</a>
+            <a class="text-primary dark:text-secondary-fixed font-bold border-l-4 border-primary dark:border-secondary-fixed pl-3 py-2 text-body-lg" href="blog.html">Blog</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="contact.html">Contact</a>
+        </nav>
+        
+        <!-- Request Quote Button inside Sidebar -->
+        <div class="mt-auto pt-6 border-t border-outline-variant/30">
+            <button class="w-full bg-primary text-on-primary py-4 rounded-sm font-label-caps text-label-caps uppercase hover:bg-primary-container transition-standard active:scale-95">
+                Request Quote
+            </button>
+        </div>
+    </div>
+
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface/95 dark:bg-primary/95 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30">
+        <nav
+            class="flex items-center justify-between gap-2 sm:gap-3 h-16 sm:h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img alt="Shourex Global" class="h-10 sm:h-12 w-auto object-contain shrink-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFEOmB8EOGtDvKPb3Dv8Q2qG6sCKN_6bvmOrakS8T6wbCevo2W69wAL7qTFVFkqaHZPWBuWMKAQFgsFeBEjOR46Uw1-5Xnqi8EJPVi0k8ur0K-g7TlI0LnR5EgY0urxKELfZgkbQJt7-G4JP_gXNQssVth-3_0qk5EkotdXfdXgH3pCSGOu-BCmj2WqoGIu6zv563eqThGQmMeoTHoNMJJjPEPyn_MCdhFT-Sj-RA8zhFR9Bs_e8pMlTP-LmACL4cSFy7_2gw6j-A">
+                <span
+                    class="font-headline-sm text-sm sm:text-headline-sm font-bold tracking-tight text-primary truncate">Shourex
+                    Global</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-stack-lg">
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200"
+                    href="index.html">Home</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200"
+                    href="about.html">About Us</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200"
+                    href="products.html">Products</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200"
+                    href="certificate.html">Certifications</a>
+                <a class="text-primary dark:text-secondary-fixed font-bold border-b-2 border-primary dark:border-secondary-fixed pb-1"
+                    href="blog.html">Blog</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html#contact-form"
+                    class="hidden lg:block bg-primary text-on-primary px-3 py-2 sm:px-6 sm:py-2.5 rounded-lg font-label-caps uppercase tracking-wider text-[10px] sm:text-label-caps hover:bg-primary-container transition-all active:scale-95">
+                    Request Quote
+                </a>
+                <!-- Hamburger Menu Button (visible on mobile/tablet <1024px) -->
+                <button id="mobile-menu-open" class="block lg:hidden text-primary dark:text-inverse-on-surface p-2 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20 rounded transition-all" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="pt-24 sm:pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <!-- Blog Header -->
+        <div class="mb-stack-lg">
+            <h1 class="font-display-lg text-display-lg text-primary mb-4">Global Trade Insights</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Expert analysis, regulatory updates,
+                and market intelligence for the international commodity trade.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Article List -->
+            <div class="col-span-12 lg:col-span-8 space-y-gutter">
+                <!-- Main Featured Post Pattern (Asymmetric) -->
+                <article
+                    class="article-card group bg-surface border border-outline-variant relative overflow-hidden flex flex-col md:flex-row h-auto md:h-[400px]">
+                    <div class="w-full md:w-1/2 overflow-hidden">
+                        <div class="article-image w-full h-full bg-cover bg-center transition-standard duration-700"
+                            data-alt="A professional high-angle photograph of vibrant red chillies drying under the golden sun in a vast Indian landscape. The lighting is cinematic, emphasizing the deep red textures against a minimalist industrial backdrop. The overall aesthetic is corporate yet authentic, reflecting Indian export quality with a sophisticated light-mode professional tone."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALa_WhVf1zntBvrvR7q5VRJG1c1mE88hr96pc2RULkcBbAL0Raja_jaS9VJ_MRj5r6A-nzCTXyFiH-CkYieFbkOj91rykh94C17v6rvBroNm1oIptzgUeYEStdVi3kMwFIJfNSo0cilrG5C2mpQA8BwQNsqzmhmTM3tpZj-4Xq7kTfGih4EKpy8OOwhRw9tNzCsx6LK9l4SoAsPhMRfJhAfykeBzwSHUNk2P2pi45HcKuUDmff4EuOsTHqlOcNWwvCdZDjC2PaxV4')">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 p-stack-lg flex flex-col justify-center">
+                        <span class="font-label-caps text-label-caps text-secondary mb-2">MARKET INSIGHTS</span>
+                        <h2
+                            class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-secondary transition-colors">
+                            How to Import Red Chillies from India</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Navigating the
+                            complexities of sourcing premium red chillies. From CAPEXIL certifications to moisture
+                            control standards, here is everything you need to know for a seamless import journey.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-data-table text-data-table text-outline italic">Oct 24, 2024 • 8 min
+                                read</span>
+                            <a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-standard"
+                                href="#">READ MORE</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Grid Posts -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                    <!-- Article 2 -->
+                    <article
+                        class="article-card group bg-surface border border-outline-variant p-stack-md flex flex-col">
+                        <div class="aspect-video overflow-hidden mb-stack-md">
+                            <div class="article-image w-full h-full bg-cover bg-center transition-standard duration-700"
+                                data-alt="A minimalist composition of premium coffee beans on a clean white surface with a soft golden glow. The image suggests global trade and market trends, utilizing high-contrast lighting to highlight the rich texture of the beans. The style is executive and modern, fitting for a B2B logistics blog header."
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuHLil0ZLRNK2jBltUPpIunzj_6ZWKPuApvahJLvNtcTJgAQDn11qdY0QKkbbfjQWHeZZ3pUNACxDZKZrSAh34hZMuw09ir34O7tkXrtMTcvmVLlf5VLO6-UmLVPBSvYx1musTkNcPiCFA4IgbXe2Pl_TdJwNfj23WGZ71HvcMNRVEvJICq6I_MdQnwBneyM27_4j3yvaEcJ4Xx0SRn45AmsbDZXZ3EbxItVaZYJOkDSlGq_MJxwNb0ISfhI92kwQajQMN8VJNQk4')">
+                            </div>
+                        </div>
+                        <span class="font-label-caps text-label-caps text-secondary mb-2">NEWS</span>
+                        <h3
+                            class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors">
+                            Coffee Export Market Trends</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Analyzing the shifts
+                            in Arabica and Robusta pricing for the Q4 global market forecast.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-data-table text-data-table text-outline">Oct 20, 2024</span>
+                            <button
+                                class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform"
+                                data-icon="arrow_forward">arrow_forward</button>
+                        </div>
+                    </article>
+                    <!-- Article 3 -->
+                    <article
+                        class="article-card group bg-surface border border-outline-variant p-stack-md flex flex-col">
+                        <div class="aspect-video overflow-hidden mb-stack-md">
+                            <div class="article-image w-full h-full bg-cover bg-center transition-standard duration-700"
+                                data-alt="A pristine laboratory environment showing quality inspection of fresh shrimp for export. The lighting is clinical and bright white, symbolizing hygiene and international standards. Professional equipment is visible but blurred in the background to focus on the high-quality product. Corporate minimalist photography style."
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxLNtWAvzGWDBDIq2s7iZKwyVd1PH9LY5S5nkVokj_Bud_FHehrnTFr8ahizRPt9pOOPqM_dqcFIYBRiAcXtUAZdKb4MR7OTOHEelC7gl-S77IzSJsNXwWWxstI9OsQzJSFmr9TY11n96nZYC_TAPrtSqwxJOTAs5KtvOaQoB6cegKruVivP_jmR9o_7UQzX9oYW3OQuheOYW46jflGZL2oJEMZkJazMvwOdDIDwJT8A3yekC8JzAuODkgLcbZub1dNjr53lfjaus')">
+                            </div>
+                        </div>
+                        <span class="font-label-caps text-label-caps text-secondary mb-2">QUALITY STANDARDS</span>
+                        <h3
+                            class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors">
+                            Shrimp Quality Standards</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Decoding HACCP and
+                            ISO 22000 requirements for seafood export to the EU and North America.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-data-table text-data-table text-outline">Oct 15, 2024</span>
+                            <button
+                                class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform"
+                                data-icon="arrow_forward">arrow_forward</button>
+                        </div>
+                    </article>
+                </div>
+                <!-- Pagination -->
+                <div class="flex justify-center pt-stack-lg">
+                    <nav class="flex items-center gap-2">
+
+
+
+
+
+                    </nav>
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <aside class="col-span-12 lg:col-span-4 space-y-stack-lg">
+
+
+                <!-- Certification Preview -->
+
+            </aside>
+        </div>
+    </main>
+    <!-- Floating WhatsApp Button -->
+    <a class="fixed bottom-10 right-10 z-[60] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform duration-300"
+        href="https://wa.me/918108109622" target="_blank">
+        <svg fill="white" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.385 1.44 5.216 1.441 5.499 0 9.973-4.475 9.976-9.974 0-2.664-1.038-5.166-2.922-7.051-1.885-1.885-4.384-2.924-7.047-2.924-5.501 0-9.975 4.475-9.978 9.974 0 2.035.617 4.021 1.782 5.716l-.1.147-1.013 3.697 3.786-.993.116.067zm11.39-4.674c-.311-.156-1.845-.91-2.134-1.015-.289-.105-.499-.156-.709.156-.21.312-.813 1.015-1.002 1.234-.189.22-.378.247-.689.091-.311-.156-1.314-.484-2.503-1.545-.924-.825-1.548-1.844-1.729-2.156-.181-.312-.019-.481.136-.635.139-.139.311-.364.467-.546.156-.182.208-.312.311-.52.105-.208.053-.39-.026-.546-.079-.156-.709-1.711-.971-2.34-.255-.612-.515-.529-.709-.538-.182-.009-.391-.01-.599-.01-.208 0-.546.078-.831.39-.285.312-1.088 1.066-1.088 2.601 0 1.535 1.115 3.018 1.272 3.226.156.208 2.195 3.352 5.318 4.701.742.32 1.321.512 1.771.654.746.237 1.425.204 1.961.124.598-.091 1.845-.754 2.107-1.444.262-.689.262-1.282.184-1.404-.079-.123-.289-.196-.599-.352z">
+            </path>
+        </svg>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-primary-container border-t border-primary-fixed-dim/20">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto text-on-primary">
+            <div class="col-span-12 lg:col-span-4 space-y-stack-md">
+                <div class="flex items-center gap-4">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-primary">Shourex Global</span>
+                </div>
+                <p class="font-body-md text-on-primary-fixed-variant max-w-sm">
+                    Connecting premium Indian produce with global demand through excellence in logistics and
+                    uncompromised quality.
+                </p>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Navigation</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="about.html">About Us</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="products.html">Products</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="certificate.html">Certifications</a></li>
+                    <li><a class="text-on-primary font-bold underline"
+                            href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Legal</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-span-12 lg:col-span-4 space-y-4">
+                <h6 class="font-label-caps text-gold">Global Office</h6>
+                <p class="text-on-primary-fixed-variant font-body-md">
+                    Pune, Maharashtra, India<br />
+                    Email: akash.chaudhari@shourex.com<br />
+                    Phone: +91 810 810 9622
+                </p>
+                <div class="flex gap-4 mt-stack-md">
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="https://www.google.com/maps/place/Shourex+Global/@18.520452,73.856787,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2bf2d5f8b8f8f:0x8d9d9d9d9d9d9d9d!8m2!3d18.520452!4d73.856787"
+                        target="_blank">
+                        <span class="material-symbols-outlined text-white">public</span>
+                    </a>
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="mailto:akash.chaudhari@shourex.com">
+                        <span class="material-symbols-outlined text-white">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-12 pt-12 border-t border-white/10 text-center">
+                <p class="font-body-md text-on-primary-fixed-variant">
+                    © 2026 Shourex Global – Delivering Quality Beyond Borders. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple search micro-interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('scale-[1.02]');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('scale-[1.02]');
+            });
+        }
+
+        // Hover effect for category counters
+        document.querySelectorAll('aside ul li a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.querySelector('.rounded-full').classList.replace('bg-surface-container', 'bg-secondary-fixed');
+            });
+            link.addEventListener('mouseleave', () => {
+                link.querySelector('.rounded-full').classList.replace('bg-secondary-fixed', 'bg-surface-container');
+            });
+        });
+
+        // Mobile Sidebar Logic
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-sidebar-close');
+
+        const openSidebar = () => {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+            openBtn.setAttribute('aria-expanded', 'true');
+            closeBtn.focus();
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+            openBtn.setAttribute('aria-expanded', 'false');
+            openBtn.focus();
+        };
+
+        if (openBtn && closeBtn && backdrop) {
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            backdrop.addEventListener('click', closeSidebar);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('translate-x-0')) {
+                    closeSidebar();
+                }
+            });
+
+            // Focus trapping inside sidebar
+            const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+            sidebar.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    const focusableElements = sidebar.querySelectorAll(focusableElementsSelector);
+                    if (focusableElements.length === 0) return;
+                    
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+                    
+                    if (e.shiftKey) { // Shift + Tab
+                        if (document.activeElement === firstElement) {
+                            lastElement.focus();
+                            e.preventDefault();
+                        }
+                    } else { // Tab
+                        if (document.activeElement === lastElement) {
+                            firstElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

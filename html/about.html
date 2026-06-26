@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | Shourex Global</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#011b3b",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "on-secondary-container": "#745c00",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container-high": "#dee8ff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface": "#111c2c",
+                        "on-secondary-fixed-variant": "#574500",
+                        "tertiary": "#101214",
+                        "on-background": "#111c2c",
+                        "surface": "#f9f9ff",
+                        "primary-fixed-dim": "#b2c7f0",
+                        "outline": "#74777f",
+                        "inverse-surface": "#263142",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d8e3fa",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary-container": "#fed65b",
+                        "background": "#f9f9ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-tertiary-container": "#8c8e90",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#44474e",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#798fb4",
+                        "surface-tint": "#4a5f82",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container": "#e7eeff",
+                        "surface-dim": "#cfdaf1",
+                        "primary": "#00122b",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b2c7f0",
+                        "tertiary-fixed": "#e1e2e4",
+                        "tertiary-container": "#242729",
+                        "on-primary-fixed-variant": "#324769",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d8e3fa",
+                        "primary-container": "#0f2747",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#735c00",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#444749"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "section-gap": "80px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Montserrat"],
+                        "data-table": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "data-table": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0, 18, 43, 0.85), rgba(0, 18, 43, 0.95));
+        }
+
+        .text-gold {
+            color: #D4AF37;
+        }
+
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+
+        .border-gold {
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md">
+    <!-- Backdrop for Mobile Sidebar -->
+    <div id="sidebar-backdrop"
+        class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-[100] transition-opacity duration-300 opacity-0 pointer-events-none"
+        aria-hidden="true"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar"
+        class="fixed top-0 bottom-0 right-0 w-80 max-w-[85vw] bg-surface dark:bg-primary z-[101] shadow-2xl p-6 flex flex-col transition-transform duration-300 ease-in-out translate-x-full"
+        role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img alt="Shourex Global Logo" class="h-8 sm:h-10 w-auto shrink-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-WaU83WVdToK2uzyC1aOLe_0AIhAvyxRJqwAf07Vaf9JHx5C1_NpAHU3-5MLBhznv54ihAajLtqUWESqR4J7D-myjmU3v7FB8_BtZCndQJB3b3Hn3KUEoZolVdGQ0wjhFCJsw7Poo-9br6k6qa0iib0yuHW75CjXRe1MNy7eHNWkRwS4JcGG50QDLe5NnY0K9cjHbP5LZ1SAiHATNwZsAPxs_oOkuCyQcDvUZPGBZxcUwxKCUdndswr9hcXPIBMTJHus3poVlVo">
+                <span
+                    class="font-headline-md text-sm sm:text-headline-sm text-primary dark:text-inverse-on-surface font-bold tracking-tight truncate">Shourex
+                    Global</span>
+            </div>
+            <button id="mobile-sidebar-close"
+                class="text-primary dark:text-inverse-on-surface p-2 hover:bg-surface-container dark:hover:bg-primary-container rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20"
+                aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+
+        <!-- Navigation Links Stack -->
+        <nav class="flex flex-col gap-4 mt-8">
+            <a class="text-on-surface-variant font-medium pl-4 py-2 hover:text-primary transition-colors duration-200 text-body-lg"
+                href="index.html">Home</a>
+            <a class="text-primary font-bold border-l-4 border-primary pl-3 py-2 text-body-lg"
+                href="about.html">About Us</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="products.html">Products</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="certificate.html">Certifications</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="blog.html">Blog</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg"
+                href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Request Quote Button inside Sidebar -->
+        <div class="mt-auto pt-6 border-t border-outline-variant/30">
+            <a href="contact.html#contact-form"
+    class="block w-full text-center bg-[#D4AF37] text-primary py-4 rounded font-bold uppercase tracking-wider text-label-caps transition-all active:scale-95 hover:bg-[#D4AF37]">
+    Request Quote
+</a>
+        </div>
+    </div>
+
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-primary/95 backdrop-blur-md border-b border-outline-variant/30">
+        <div
+            class="flex items-center justify-between gap-2 sm:gap-3 h-16 sm:h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img alt="Shourex Global Logo" class="h-10 sm:h-12 w-10 sm:w-12 object-contain shrink-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-WaU83WVdToK2uzyC1aOLe_0AIhAvyxRJqwAf07Vaf9JHx5C1_NpAHU3-5MLBhznv54ihAajLtqUWESqR4J7D-myjmU3v7FB8_BtZCndQJB3b3Hn3KUEoZolVdGQ0wjhFCJsw7Poo-9br6k6qa0iib0yuHW75CjXRe1MNy7eHNWkRwS4JcGG50QDLe5NnY0K9cjHbP5LZ1SAiHATNwZsAPxs_oOkuCyQcDvUZPGBZxcUwxKCUdndswr9hcXPIBMTJHus3poVlVo" />
+                <span
+                    class="font-headline-sm text-sm sm:text-headline-sm font-bold tracking-tight text-primary dark:text-inverse-on-surface truncate">Shourex
+                    Global</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-stack-lg">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-body-md text-body-md"
+                    href="index.html">Home</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+                    href="about.html">About Us</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-body-md text-body-md"
+                    href="products.html">Products</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors"
+                    href="certificate.html">Certifications</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors"
+                    href="blog.html">Blog</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html#contact-form"
+    class="hidden lg:block bg-[#D4AF37] text-primary px-3 py-2 sm:px-6 sm:py-2 rounded font-bold uppercase text-[10px] sm:text-label-caps transition-all active:scale-95 text-center hover:bg-[#D4AF37]">
+    Request Quote
+</a>
+                <!-- Hamburger Menu Button (visible on mobile/tablet <1024px) -->
+                <button id="mobile-menu-open"
+                    class="block lg:hidden text-primary dark:text-inverse-on-surface p-2 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20 rounded transition-all"
+                    aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header
+        class="relative min-h-[80vh] md:min-h-screen flex items-center justify-center text-center px-margin-mobile md:px-margin-desktop pt-24 sm:pt-20">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center"
+                style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuMZynXVsskslIVWpuoljri5XCh2_XUu9EcBhvF1lmcdxrCAi93Elyvrq3Hn2WQ4rE0LSyGKJd_38fipXSDMmEosF8RErWek7X_1fPJBkzYy70uAxSgi44ufK7ae5Ag-UKNARRTcXRNdrDvnPvYydVa73H3vXSjmoi39S0MGvU1JQuaJL2fgkVw_sEbOttlx_HDez1DBdgaz8jQGQM6mKQP3iR9Xt9K4pjgiqV-EQnQeb2pnLTPmTYJdss')">
+            </div>
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1
+                class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-stack-md uppercase tracking-tight">
+                Delivering Quality Beyond Borders
+            </h1>
+            <p class="font-headline-sm text-headline-sm text-gold mb-stack-lg italic">
+                From the Heritage of Pune, India to the Global Horizon.
+            </p>
+            <div class="w-24 h-1 bg-gold mx-auto mb-stack-lg"></div>
+            <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto">
+                Built on decades of trust and industrial precision, Shourex Global connects Indian excellence with
+                international demand.
+            </p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <span class="material-symbols-outlined text-white text-4xl">keyboard_double_arrow_down</span>
+        </div>
+    </header>
+    <!-- Our Story Section -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="col-span-12 lg:col-span-6 space-y-stack-md">
+                <span class="font-label-caps text-label-caps text-gold uppercase tracking-[0.2em]">Our Heritage</span>
+                <h2 class="font-display-lg text-display-lg text-primary">Pune to the World</h2>
+                <div class="space-y-stack-md font-body-lg text-body-lg text-on-surface-variant text-justify">
+                    <p>
+                        Established in the industrial heartland of Pune, Shourex Global began with a singular vision: to
+                        bridge the gap between Indian agricultural prowess and the sophisticated requirements of the
+                        global market. Our journey is rooted in the rich traditions of Maharashtra's commerce, infused
+                        with modern logistics technology.
+                    </p>
+                    <p>
+                        What started as a specialized export house for regional spices has transformed into a
+                        multifaceted global entity. Today, we handle complex supply chains for fresh produce, frozen
+                        seafood, and essential commodities, ensuring that every shipment carries the hallmark of Indian
+                        reliability and international quality standards.
+                    </p>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 relative">
+                <div
+                    class="aspect-square bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant/30 relative">
+                    <img class="w-full h-full object-cover"
+                        data-alt="A professional aerial cinematic shot of Pune's industrial skyline at dawn, transitioning into a modern shipping terminal. The lighting is crisp and corporate, with deep navy and gold tones reflecting Shourex Global's brand identity. The image should evoke a sense of heritage and global scale, with clean lines and high-contrast professional photography."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ot-dFUHfzDqgE6K98JKRDA3Q4RcTqwCRQYQLM9KklSu2-obJu7-FKo5cCqsGCbEpdisrqbZpFj_GEZDOyqjW3HL1oUvz5m7NucQV0sGhVU7z8crHAh7KEcdFYlcOuPOhq8ZcNmoUkETAQ1phhUbYBSxx1g7fmAfrcojwyt4FBR65iZv5emE7niQ-rMPIrDEGmhhW-QAkuAy6BHv8EJVkbGb8zHRr_1AZgGzAsB0v-TDJHLPKdJ0kQoAnAaUcOjIOWkUWrvYZYMk" />
+                </div>
+                <div
+                    class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary p-stack-md flex flex-col justify-center items-center text-center hidden lg:flex">
+                    <span class="font-label-caps text-gold uppercase">Industry</span>
+                    <span class="font-label-caps text-gold uppercase">Expertise</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mission & Vision Section (Bento Grid Style) -->
+    <section class="bg-primary-container py-section-gap">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                <div
+                    class="col-span-12 md:col-span-6 bg-white p-12 rounded-lg border border-outline-variant/20 group hover:border-gold transition-all duration-300">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-stack-md"
+                        style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Our Mission</h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        To redefine the export paradigm by delivering uncompromised quality, fostering sustainable
+                        partnerships, and ensuring that the richness of Indian exports reaches every corner of the globe
+                        with surgical precision.
+                    </p>
+                </div>
+                <div
+                    class="col-span-12 md:col-span-6 bg-primary p-12 rounded-lg border border-white/10 group hover:border-gold transition-all duration-300">
+                    <span class="material-symbols-outlined text-gold text-5xl mb-stack-md"
+                        style="font-variation-settings: 'FILL' 1;">visibility</span>
+                    <h3 class="font-headline-md text-headline-md text-white mb-stack-md">Our Vision</h3>
+                    <p class="font-body-lg text-body-lg text-surface-variant leading-relaxed">
+                        To become the world's most trusted gateway for diversified Indian exports, recognized not just
+                        for the volume of our trade, but for the integrity of our processes and the excellence of our
+                        products.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Values Section -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="text-center mb-section-gap">
+            <span class="font-label-caps text-label-caps text-gold uppercase tracking-[0.2em]">Our DNA</span>
+            <h2 class="font-display-lg text-display-lg text-primary mt-4">Corporate Core Values</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-stack-lg">
+            <!-- Quality -->
+            <div
+                class="p-8 bg-white border border-outline-variant/30 hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-full mb-stack-md">
+                    <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Quality</h4>
+                <p class="text-on-surface-variant font-body-md">Refusal to compromise on international standards.</p>
+            </div>
+            <!-- Transparency -->
+            <div
+                class="p-8 bg-white border border-outline-variant/30 hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-full mb-stack-md">
+                    <span class="material-symbols-outlined text-primary text-3xl">api</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Transparency</h4>
+                <p class="text-on-surface-variant font-body-md">Clear, ethical communication at every stage.</p>
+            </div>
+            <!-- Reliability -->
+            <div
+                class="p-8 bg-white border border-outline-variant/30 hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-full mb-stack-md">
+                    <span class="material-symbols-outlined text-primary text-3xl">handshake</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Reliability</h4>
+                <p class="text-on-surface-variant font-body-md">Consistency in delivery and commitment.</p>
+            </div>
+            <!-- Sustainability -->
+            <div
+                class="p-8 bg-white border border-outline-variant/30 hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-full mb-stack-md">
+                    <span class="material-symbols-outlined text-primary text-3xl">eco</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Sustainability</h4>
+                <p class="text-on-surface-variant font-body-md">Eco-conscious sourcing and ethical trade.</p>
+            </div>
+            <!-- Customer Focus -->
+            <div
+                class="p-8 bg-white border border-outline-variant/30 hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-full mb-stack-md">
+                    <span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Customer Focus</h4>
+                <p class="text-on-surface-variant font-body-md">Tailored solutions for every global partner.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Certification Badge Grid -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+        <h3 class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase tracking-[0.3em] mb-stack-lg">
+            Our Global Compliance Standard</h3>
+        <div
+            class="flex flex-wrap justify-center gap-12 items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <img class="h-16 w-auto object-contain"
+                data-alt="A minimalist professional logo of ISO 9001 certification in high-contrast navy and white, representing international quality management standards for a global trade corporation."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAW32dfc-4oPQ0TM8cE_KpevAF5VZioudxuE-X0Ihf49x76lawswjx0EQuJBl4Rs3_9hvvFKb2vwrAmOeQ7oRcHWpqxoSPMcSfUgqSXbvNdVG-m4JVj80Mxkz-2eefwstu4l7fh8QEglgfXgqjBP-mMuD9fFxJ4ZUkO71zSxjYp111h6iXIQrtCZVmQpCJIaFjMb8Y_XCJnsKLqmdC1UYsPG92F5SaMLCuYlamnuGlqoC6YH-Z7givHsXJ_FZ4Xb0VEGPat_kzwss" />
+            <img class="h-16 w-auto object-contain"
+                data-alt="A clean professional logo for HACCP food safety management systems, rendered in a corporate minimalist style with sharp lines, representing export reliability for food products."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW9R3m_GK1i0s6AzFO3KJIsW2iJnz2BsaiKqsRX45VIHyc2URzY4SHJdl-97qbrSabFH4Gg4eZd51_Uo96G18ksXAcfK3eKEafziX6m8Yysk5oEFhpg2e6fhg9gbdZ9EPs8HJmdTYwcoMeaB464uPTErpHUXINzjeoZmXrw0oGQCjajcs5LADVi9uMC77WuSoN1Cky76sIEVTNFHvraNSUVuD-JqRbxYHgDaXsCxzwZb69vLAvEW158GroCBubOHZt_gAhXlJjUzo" />
+            <img class="h-16 w-auto object-contain"
+                data-alt="The official FSSAI logo of India, presented in a professional grayscale format, symbolizing compliance with national food safety standards for international trade."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBDS6LNSsiT_RziDqH4IpCbohaVIMwujaC1WW8z47JzR4sVnf4y1Lh1pwcPRtvnQEkSbGUR05cnNw4G0L8cFwbtym2CZSUspIBK_OAEhTOpl-yQ1FvtQJ4FGvtsAwFC1L6xXJ6niqUiaGEVF_LCTF99iFW6BVyepaEoMM7hkD8FNEmevIEy7nQH9GaqFW-qLWbzm_1t6ar5qFfPsMWYNsJJypd5C3axdTgQS7cZH0sB8q1Y0mOcBJLPh1RF1oM_RfLS7EKLUsUWrQ" />
+            <img class="h-16 w-auto object-contain"
+                data-alt="The APEDA logo representing agricultural and processed food products export development authority of India, in a professional monochrome finish."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9PWxZ6TORxMVVbmU8vxRQCwtaBK07rW2aDN7lqF7ZlRzl9RsENW0JSxuw0rXirjARicwMUUkSiDb_NFpPpYBoSecuScrhQl8XiiM3Kd2-eJqUwenhRG4e-e5QBmsopK-RodIPJ4JwfqUucaW4fA0qCWtsMUYOQpGViGl5WOf5bdni44fwfA5mEQx08zUG9j8SKP56Lw2XZ5-PI2wL065i3PBsvT1cxgHA5SX4I6aqHTn1Ug-PWVnnKN-UtFU1pJFw7zThFNMdqKE" />
+            <img class="h-16 w-auto object-contain"
+                data-alt="A sleek minimalist gold-tinted icon representing global trade and export excellence, following the Shourex Global corporate aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXpW9PwW5L5fGtEX9z_WuBLSBjxLlkO8ZmotH3kQqqlQowSVOScw6t3UonZaVT9N20rvIEc_d98pZK03B3QRuS6djIUUmrfBFtMKdPrBRmyRYsFtq40b_B1Qeqc5RD2_8-rUyEFXrKdi67yUNn9mzmUNQM7PdGjWUrJ80wpeddY_RvpikMHdmTxQYe-rCnqrfbg4Z93_xFQALZPQpHerhKTlEQ3L6dosw9P7qc9nVkAS1k4Mtf9bwJ2SGmKV62m5Q1lKxTpkFm9B4" />
+        </div>
+    </section>
+    <!-- Floating WhatsApp Button -->
+    <a class="fixed bottom-10 right-10 z-[60] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform duration-300"
+        href="https://wa.me/918108109622" target="_blank">
+        <svg fill="white" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.385 1.44 5.216 1.441 5.499 0 9.973-4.475 9.976-9.974 0-2.664-1.038-5.166-2.922-7.051-1.885-1.885-4.384-2.924-7.047-2.924-5.501 0-9.975 4.475-9.978 9.974 0 2.035.617 4.021 1.782 5.716l-.1.147-1.013 3.697 3.786-.993.116.067zm11.39-4.674c-.311-.156-1.845-.91-2.134-1.015-.289-.105-.499-.156-.709.156-.21.312-.813 1.015-1.002 1.234-.189.22-.378.247-.689.091-.311-.156-1.314-.484-2.503-1.545-.924-.825-1.548-1.844-1.729-2.156-.181-.312-.019-.481.136-.635.139-.139.311-.364.467-.546.156-.182.208-.312.311-.52.105-.208.053-.39-.026-.546-.079-.156-.709-1.711-.971-2.34-.255-.612-.515-.529-.709-.538-.182-.009-.391-.01-.599-.01-.208 0-.546.078-.831.39-.285.312-1.088 1.066-1.088 2.601 0 1.535 1.115 3.018 1.272 3.226.156.208 2.195 3.352 5.318 4.701.742.32 1.321.512 1.771.654.746.237 1.425.204 1.961.124.598-.091 1.845-.754 2.107-1.444.262-.689.262-1.282.184-1.404-.079-.123-.289-.196-.599-.352z">
+            </path>
+        </svg>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-primary-container border-t border-primary-fixed-dim/20">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto text-on-primary">
+            <div class="col-span-12 lg:col-span-4 space-y-stack-md">
+                <div class="flex items-center gap-4">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-primary">Shourex Global</span>
+                </div>
+                <p class="font-body-md text-on-primary-fixed-variant max-w-sm">
+                    Connecting premium Indian produce with global demand through excellence in logistics and
+                    uncompromised quality.
+                </p>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Navigation</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-on-primary font-bold underline" href="about.html">About Us</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="products.html">Products</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="certificate.html">Certifications</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Legal</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-span-12 lg:col-span-4 space-y-4">
+                <h6 class="font-label-caps text-gold">Global Office</h6>
+                <p class="text-on-primary-fixed-variant font-body-md">
+                    Pune, Maharashtra, India<br />
+                    Email: akash.chaudhari@shourex.com<br />
+                    Phone: +91 810 810 9622
+                </p>
+                <div class="flex gap-4 mt-stack-md">
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="https://www.google.com/maps/place/Shourex+Global/@18.520452,73.856787,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2bf2d5f8b8f8f:0x8d9d9d9d9d9d9d9d!8m2!3d18.520452!4d73.856787"
+                        target="_blank">
+                        <span class="material-symbols-outlined text-white">public</span>
+                    </a>
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="mailto:akash.chaudhari@shourex.com">
+                        <span class="material-symbols-outlined text-white">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-12 pt-12 border-t border-white/10 text-center">
+                <p class="font-body-md text-on-primary-fixed-variant">
+                    © 2026 Shourex Global – Delivering Quality Beyond Borders. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Micro-interactions for hovering cards
+        const cards = document.querySelectorAll('.hover\\:shadow-xl');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('scale-[1.02]');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('scale-[1.02]');
+            });
+        });
+
+        // Mobile Sidebar Logic
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-sidebar-close');
+
+        const openSidebar = () => {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+            openBtn.setAttribute('aria-expanded', 'true');
+            closeBtn.focus();
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+            openBtn.setAttribute('aria-expanded', 'false');
+            openBtn.focus();
+        };
+
+        if (openBtn && closeBtn && backdrop) {
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            backdrop.addEventListener('click', closeSidebar);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('translate-x-0')) {
+                    closeSidebar();
+                }
+            });
+
+            // Focus trapping inside sidebar
+            const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+            sidebar.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    const focusableElements = sidebar.querySelectorAll(focusableElementsSelector);
+                    if (focusableElements.length === 0) return;
+
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+
+                    if (e.shiftKey) { // Shift + Tab
+                        if (document.activeElement === firstElement) {
+                            lastElement.focus();
+                            e.preventDefault();
+                        }
+                    } else { // Tab
+                        if (document.activeElement === lastElement) {
+                            firstElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

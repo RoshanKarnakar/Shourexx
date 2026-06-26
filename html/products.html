@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Products | Shourex Global – Delivering Quality Beyond Borders</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "surface-container": "#e7eeff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-tint": "#4a5f82",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-container": "#798fb4",
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#111c2c",
+                        "surface-dim": "#cfdaf1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-fixed": "#011b3b",
+                        "on-secondary-fixed": "#241a00",
+                        "primary": "#00122b",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#0f2747",
+                        "tertiary-fixed": "#e1e2e4",
+                        "primary-fixed-dim": "#b2c7f0",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474e",
+                        "secondary-container": "#fed65b",
+                        "inverse-primary": "#b2c7f0",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d8e3fa",
+                        "on-tertiary-container": "#8c8e90",
+                        "tertiary": "#101214",
+                        "on-secondary-container": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#74777f",
+                        "on-primary-fixed-variant": "#324769",
+                        "outline-variant": "#c4c6cf",
+                        "primary-fixed": "#d5e3ff",
+                        "secondary": "#735c00",
+                        "tertiary-container": "#242729",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-background": "#111c2c",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#263142"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-table": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "data-table": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .product-section:nth-child(even) {
+            background-color: #f0f3ff;
+        }
+
+        .sticky-filter {
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+    <!-- Backdrop for Mobile Sidebar -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-[100] transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="fixed top-0 bottom-0 right-0 w-80 max-w-[85vw] bg-surface dark:bg-primary z-[101] shadow-2xl p-6 flex flex-col transition-transform duration-300 ease-in-out translate-x-full" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img alt="Shourex Global Logo" class="h-8 sm:h-10 w-auto shrink-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFEOmB8EOGtDvKPb3Dv8Q2qG6sCKN_6bvmOrakS8T6wbCevo2W69wAL7qTFVFkqaHZPWBuWMKAQFgsFeBEjOR46Uw1-5Xnqi8EJPVi0k8ur0K-g7TlI0LnR5EgY0urxKELfZgkbQJt7-G4JP_gXNQssVth-3_0qk5EkotdXfdXgH3pCSGOu-BCmj2WqoGIu6zv563eqThGQmMeoTHoNMJJjPEPyn_MCdhFT-Sj-RA8zhFR9Bs_e8pMlTP-LmACL4cSFy7_2gw6j-A">
+                <span class="font-headline-md text-sm sm:text-headline-sm text-primary dark:text-inverse-on-surface font-bold tracking-tight truncate">Shourex Global</span>
+            </div>
+            <button id="mobile-sidebar-close" class="text-primary dark:text-inverse-on-surface p-2 hover:bg-surface-container dark:hover:bg-primary-container rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20" aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        
+        <!-- Navigation Links Stack -->
+        <nav class="flex flex-col gap-4 mt-8">
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="index.html">Home</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="about.html">About Us</a>
+            <a class="text-primary dark:text-secondary-fixed font-bold border-l-4 border-primary dark:border-secondary-fixed pl-3 py-2 text-body-lg" href="products.html">Products</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="certificate.html">Certifications</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="blog.html">Blog</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-medium pl-4 py-2 hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 text-body-lg" href="contact.html">Contact</a>
+        </nav>
+        
+        <!-- Request Quote Button inside Sidebar -->
+        <div class="mt-auto pt-6 border-t border-outline-variant/30">
+            <button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-caps uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95">
+                Request Quote
+            </button>
+        </div>
+    </div>
+
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-primary/95 backdrop-blur-md border-b border-outline-variant/30">
+        <div
+            class="flex items-center justify-between gap-2 sm:gap-3 h-16 sm:h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img alt="Shourex Global Logo" class="h-8 sm:h-10 object-contain shrink-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFEOmB8EOGtDvKPb3Dv8Q2qG6sCKN_6bvmOrakS8T6wbCevo2W69wAL7qTFVFkqaHZPWBuWMKAQFgsFeBEjOR46Uw1-5Xnqi8EJPVi0k8ur0K-g7TlI0LnR5EgY0urxKELfZgkbQJt7-G4JP_gXNQssVth-3_0qk5EkotdXfdXgH3pCSGOu-BCmj2WqoGIu6zv563eqThGQmMeoTHoNMJJjPEPyn_MCdhFT-Sj-RA8zhFR9Bs_e8pMlTP-LmACL4cSFy7_2gw6j-A">
+                <span
+                    class="font-headline-sm text-sm sm:text-headline-sm font-bold tracking-tight text-primary dark:text-inverse-on-surface truncate">Shourex
+                    Global</span>
+            </div>
+            <nav class="hidden lg:flex gap-8">
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md"
+                    href="index.html">Home</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md"
+                    href="about.html">About Us</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+                    href="products.html">Products</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md"
+                    href="certificate.html">Certifications</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md"
+                    href="blog.html">Blog</a>
+                <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md"
+                    href="contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="contact.html#contact-form"
+                    class="hidden lg:block bg-primary text-on-primary px-3 py-2 sm:px-6 sm:py-2.5 rounded-lg font-label-caps uppercase tracking-wider text-[10px] sm:text-label-caps hover:bg-primary-container transition-all active:scale-95">
+                    Request Quote
+                </a>
+                <!-- Hamburger Menu Button (visible on mobile/tablet <1024px) -->
+                <button id="mobile-menu-open" class="block lg:hidden text-primary dark:text-inverse-on-surface p-2 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20 rounded transition-all" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24 sm:pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[45vh] md:h-[40vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center"
+                    data-alt="A cinematic, high-angle shot of a sprawling industrial shipyard with neat rows of cargo containers under a clear, corporate blue sky. The lighting is crisp and professional, emphasizing the global scale of logistics. The color palette is dominated by deep navy blues and industrial grays, with subtle gold sunlight reflections, creating a mood of reliability and institutional authority."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClRLd6LhWQXnmJxa2va8LAX91NY4yA-qALnus-kyWXJQtyB5SXdC3QmD42K6iOKtqKLrH7LmSKnhz_Fm0wV9lVKRogo-ErT_FHJhgAfmVNFFVW47ljetmiRPFV7FN8ajeVksaIMPfN25cyHEoKE-V7Wast5uzDEOA_951GOtHx_XXG5zfDkMkwYcHhpmRbLf42jm1wUsshh4quNAHaC6SOkG_zeQoUPstiUL3HKojCE6mwWTAQ2MUt5uK2xf1jGuIdVALk8N9d63c')">
+                </div>
+                <div class="absolute inset-0 bg-primary/60 backdrop-blur-[2px]"></div>
+            </div>
+            <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+                <h1 class="font-display-lg text-display-lg text-on-primary max-w-2xl">Premium Global Commodities</h1>
+                <p class="text-on-primary/80 mt-4 font-body-lg text-body-lg max-w-xl">Directly sourced from the world's
+                    most fertile regions, ensuring uncompromising quality and industrial-grade reliability for
+                    international trade.</p>
+            </div>
+        </section>
+        <!-- Main Product Content -->
+        <div
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Sidebar Filter -->
+            <aside class="col-span-3 hidden md:block">
+                <div class="sticky sticky-filter space-y-stack-lg">
+                    <h3 class="font-label-caps text-label-caps text-primary border-b border-outline-variant pb-2">
+                        Product Categories</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group"
+                                href="#red-chillies">
+                                <span
+                                    class="material-symbols-outlined text-outline group-hover:text-primary">people</span>
+                                <span class="font-body-md">Red Chillies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group"
+                                href="#coffee">
+                                <span
+                                    class="material-symbols-outlined text-outline group-hover:text-primary">coffee</span>
+                                <span class="font-body-md">Premium Coffee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group"
+                                href="#shrimp">
+                                <span
+                                    class="material-symbols-outlined text-outline group-hover:text-primary">set_meal</span>
+                                <span class="font-body-md">Seafood &amp; Shrimp</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt-12 p-6 bg-primary-container text-on-primary rounded-lg">
+                        <h4 class="font-headline-sm text-headline-sm mb-4">Bulk Orders?</h4>
+                        <p class="text-on-primary/70 text-body-md mb-6">Connect with our export managers for customized
+                            logistics and volume-based pricing.</p>
+                        <button
+                            class="w-full bg-secondary-container text-on-secondary-container py-3 rounded font-label-caps hover:bg-secondary-fixed transition-colors">Speak
+                            to an Expert</button>
+                    </div>
+                </div>
+            </aside>
+            <!-- Product Sections -->
+            <div class="col-span-12 md:col-span-9 space-y-section-gap">
+                <!-- Section 1: Red Chillies -->
+                <section class="product-section scroll-mt-24" id="red-chillies">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center mb-12">
+                        <div class="space-y-4">
+                            <span class="font-label-caps text-secondary text-label-caps">Category: Spices</span>
+                            <h2 class="font-headline-md text-headline-md text-primary">Red Chillies (Teja, Guntur,
+                                Byadgi)</h2>
+                            <p class="text-on-surface-variant font-body-md">Sourced from the heart of Andhra Pradesh and
+                                Karnataka, our red chillies are renowned for their vibrant color, pungent aroma, and
+                                uniform quality. We maintain strict HACCP standards from farm to dispatch.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-surface-container px-3 py-1 text-xs font-bold rounded border border-outline-variant/30">ISO
+                                    22000 Certified</span>
+                                <span
+                                    class="bg-surface-container px-3 py-1 text-xs font-bold rounded border border-outline-variant/30">HACCP
+                                    Approved</span>
+                                <span
+                                    class="bg-surface-container px-3 py-1 text-xs font-bold rounded border border-outline-variant/30">FSSAI
+                                    Certified</span>
+                            </div>
+                        </div>
+                        <div
+                            class="aspect-square bg-surface-container-low border border-outline-variant overflow-hidden group">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="A professional top-down studio photograph of three distinct varieties of dried red chillies—Guntur, Byadgi, and S17—arranged in neat, separate clusters on a white marble surface. The lighting is bright and even, highlighting the deep crimson textures and wrinkled skins of the chillies. The overall aesthetic is clean, minimal, and high-end, suitable for a premium industrial trade catalog."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5nnH8n__K3IoMJgJrAmM1wrQASOSV3IatEA4uYnPOQc4A96TZsL89wcSSZoW1pLi0IlAeEdO7-YPVUbB82uW9yEZGH1n_xV6szhom4fq9RFKxWm3lzrDlLkivNwemGkdTQ01XnfAZa1N4H2GDvDAD1Rw7L1hM8yWolYoYhGRGinji2S2dcLjbt8D9muN8HCVxI5pv6xUXVlv_ghsACONaBrKRXA9c7-0k-GecjbGRq92fqIJHGEspF4ia-ZcVa_dRs8Ocs7Jng1I">
+                        </div>
+                    </div>
+                    <div class="bg-surface border border-outline-variant overflow-hidden">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface-container-low border-b border-outline-variant">
+                                <tr>
+                                    <th class="px-6 py-4 font-label-caps text-primary">Specification</th>
+                                    <th class="px-6 py-4 font-label-caps text-primary">Guntur (S17)</th>
+                                    <th class="px-6 py-4 font-label-caps text-primary">Byadgi (668)</th>
+                                    <th class="px-6 py-4 font-label-caps text-primary">Teja</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/50 font-data-table text-data-table">
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-primary">Heat Level (SHU)</td>
+                                    <td class="px-6 py-4">75,000 - 1,00,000</td>
+                                    <td class="px-6 py-4">8,000 - 15,000</td>
+                                    <td class="px-6 py-4">65,000 - 85,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-primary">ASTA Color</td>
+                                    <td class="px-6 py-4">60 - 80</td>
+                                    <td class="px-6 py-4">150 - 200</td>
+                                    <td class="px-6 py-4">50 - 70</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-primary">Packaging</td>
+                                    <td class="px-6 py-4" colspan="3">5kg, 10kg, 25kg Jute or PP Bags</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-8 flex flex-col sm:flex-row justify-end gap-4">
+                        <button
+                            class="px-8 py-3 border border-primary text-primary font-label-caps hover:bg-primary/5 transition-colors">View
+                            Detailed Specs</button>
+                        <button
+                            class="px-8 py-3 bg-secondary text-on-secondary font-label-caps hover:bg-secondary-fixed-dim transition-colors">Inquire
+                            Now</button>
+                    </div>
+                </section>
+                <!-- Section 2: Coffee -->
+                <section class="product-section scroll-mt-24 pt-section-gap border-t border-outline-variant/30"
+                    id="coffee">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center mb-12">
+                        <div
+                            class="aspect-video bg-surface-container-low border border-outline-variant overflow-hidden group order-2 md:order-1">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="A sophisticated industrial shot of green coffee beans being poured into a high-tech roasting machine, with some roasted beans visible in the foreground. The image has a warm, professional glow, emphasizing the artisanal precision and industrial efficiency of the coffee production process. The lighting creates rich shadows and highlights on the varied textures of the beans. The background features clean, brushed stainless steel machinery."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-OZcIXBcKCIxz-I2Qlf_crSReoMT3mznD1f7RO-9ByBLWvZcaG5g3MiSlTlp1msQpGM8c--JEKqJd6GRoZFfgBPKCwp34WlDxvAXfuD0cqsseQkFWiTsNXRV0ZOoBydLqgoq7l7U7dw8r3gRbM5NhvTEqfAINj8anjg720zugZT-LYiZsYc2s9V5GB4ahbWl9CNw3QOXe_uoLoUBTntmXTWTt-vvSYDjrFu4ZyrgHyHOxv-510vM8z6RX_VWFn50P_QzXyZNDJy8">
+                        </div>
+                        <div class="space-y-4 order-1 md:order-2">
+                            <span class="font-label-caps text-secondary text-label-caps">Category: Beverages</span>
+                            <h2 class="font-headline-md text-headline-md text-primary">Indian Robusta &amp; Arabica</h2>
+                            <p class="text-on-surface-variant font-body-md">Delivering the finest shade-grown coffee
+                                from the highlands of Coorg and Chikmagalur. Available as Green Beans, Roasted, or
+                                Ground to meet specific international flavor profiles.</p>
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="p-4 border border-outline-variant/50 rounded flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">eco</span>
+                                    <span class="text-data-table font-bold">100% Organic Options</span>
+                                </div>
+                                <div class="p-4 border border-outline-variant/50 rounded flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">grade</span>
+                                    <span class="text-data-table font-bold">Premium AAA Grade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-gutter">
+                        <div class="p-6 border border-outline-variant bg-white hover:shadow-md transition-shadow">
+                            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Robusta Cherry</h4>
+                            <p class="text-sm text-on-surface-variant mb-4">Strong body with chocolatey notes. Screen
+                                17/18 available.</p>
+                            <button class="text-primary font-bold text-sm underline hover:text-secondary">Request
+                                Sample</button>
+                        </div>
+                        <div class="p-6 border border-outline-variant bg-white hover:shadow-md transition-shadow">
+                            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Arabica Plantation</h4>
+                            <p class="text-sm text-on-surface-variant mb-4">Mild acidity with a clean, sweet aroma. High
+                                altitude sourced.</p>
+                            <button class="text-primary font-bold text-sm underline hover:text-secondary">Request
+                                Sample</button>
+                        </div>
+                        <div class="p-6 border border-outline-variant bg-white hover:shadow-md transition-shadow">
+                            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Custom Roasted</h4>
+                            <p class="text-sm text-on-surface-variant mb-4">Light, Medium, or Dark roasts tailored to
+                                your market preference.</p>
+                            <button class="text-primary font-bold text-sm underline hover:text-secondary">Request
+                                Sample</button>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex justify-center">
+                        <button
+                            class="px-12 py-4 bg-primary text-on-primary font-label-caps hover:bg-primary-container transition-all flex items-center gap-3">
+                            <span class="material-symbols-outlined">request_quote</span>
+                            Generate Bulk RFQ
+                        </button>
+                    </div>
+                </section>
+                <!-- Section 3: Shrimp -->
+                <section class="product-section scroll-mt-24 pt-section-gap border-t border-outline-variant/30"
+                    id="shrimp">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-start mb-12">
+                        <div class="space-y-6">
+                            <span class="font-label-caps text-secondary text-label-caps">Category: Seafood</span>
+                            <h2 class="font-headline-md text-headline-md text-primary">Premium Frozen Shrimp (Vannamei
+                                &amp; Black Tiger)</h2>
+                            <p class="text-on-surface-variant font-body-md">Harvested from certified aquaculture farms,
+                                our shrimp undergo a rigorous 7-step quality check including microbiological and
+                                antibiotic testing to ensure global safety compliance.</p>
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-primary">Processing Formats:</h4>
+                                <ul class="grid grid-cols-2 gap-y-2 text-sm">
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                                        HOSO (Head on Shell on)</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                                        HLSO (Headless Shell on)</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                                        PD (Peeled and Deveined)</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                                        Cooked &amp; Blanched</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-gutter">
+                            <div
+                                class="aspect-square bg-surface-container-low border border-outline-variant overflow-hidden">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="A visually stunning close-up of fresh, raw Vannamei shrimp presented on a bed of crushed ice. The shrimp are arranged artistically, showing off their translucent, bluish-gray shells and firm texture. The lighting is cool and crisp, highlighting the glistening moisture of the seafood. The background is a minimalist, modern kitchen environment with cold steel accents, conveying extreme freshness and hygiene standards."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxNLvhyN0zmaxBr5dnaVYlB6nd-ggr-wBxp0dyyB8H27oc5nHybt-v_lklB5dQCK5KRRUA0muBvlb8749GFpNIQh43Uk3uIAZuNSUBi922P9_GDSK-S2fvsAKU2S5QpLeigUJ82osmyy7LAMMtiuNsyZ1--AhR4Qr5ycaHIDVjFV4EsVeXfu8isb81SJ7GckKC-fexLMZ2YZdLSY4Q9GtAwiCJwjg5ow6Or7JTOiv2szOOImRbaxvwPX10dAwNmWELU1nIkR6HUWM">
+                            </div>
+                            <div class="bg-surface-container p-6 border-l-4 border-secondary">
+                                <p class="text-data-table italic font-medium">"Our cold chain logistics ensure the
+                                    product remains at -18°C from processing facility to your warehouse, guaranteed."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface border border-outline-variant overflow-hidden">
+                        <div class="bg-primary-container p-4">
+                            <h4 class="text-on-primary font-label-caps">Quality Check Parameters</h4>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-outline-variant">
+                            <div class="p-6 text-center">
+                                <p class="text-xs font-bold text-on-surface-variant uppercase mb-2">Antibiotic Free</p>
+                                <p class="text-lg font-bold text-primary">ELISA Tested</p>
+                            </div>
+                            <div class="p-6 text-center">
+                                <p class="text-xs font-bold text-on-surface-variant uppercase mb-2">Glazing</p>
+                                <p class="text-lg font-bold text-primary">0% to 20%</p>
+                            </div>
+                            <div class="p-6 text-center">
+                                <p class="text-xs font-bold text-on-surface-variant uppercase mb-2">Freezing</p>
+                                <p class="text-lg font-bold text-primary">IQF / Block</p>
+                            </div>
+                            <div class="p-6 text-center">
+                                <p class="text-xs font-bold text-on-surface-variant uppercase mb-2">Shelf Life</p>
+                                <p class="text-lg font-bold text-primary">24 Months</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-8 flex flex-col md:flex-row gap-4 items-center justify-between p-8 bg-surface-container-low rounded-xl">
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-primary">Secure Your Shipment</h4>
+                            <p class="text-on-surface-variant">Real-time inventory status for seasonal harvests.</p>
+                        </div>
+                        <button
+                            class="bg-secondary text-on-secondary px-10 py-4 font-label-caps hover:shadow-lg transition-all active:scale-95">Check
+                            Availability</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- Floating WhatsApp Button -->
+    <a class="fixed bottom-10 right-10 z-[60] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform duration-300"
+        href="https://wa.me/918108109622" target="_blank">
+        <svg fill="white" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.385 1.44 5.216 1.441 5.499 0 9.973-4.475 9.976-9.974 0-2.664-1.038-5.166-2.922-7.051-1.885-1.885-4.384-2.924-7.047-2.924-5.501 0-9.975 4.475-9.978 9.974 0 2.035.617 4.021 1.782 5.716l-.1.147-1.013 3.697 3.786-.993.116.067zm11.39-4.674c-.311-.156-1.845-.91-2.134-1.015-.289-.105-.499-.156-.709.156-.21.312-.813 1.015-1.002 1.234-.189.22-.378.247-.689.091-.311-.156-1.314-.484-2.503-1.545-.924-.825-1.548-1.844-1.729-2.156-.181-.312-.019-.481.136-.635.139-.139.311-.364.467-.546.156-.182.208-.312.311-.52.105-.208.053-.39-.026-.546-.079-.156-.709-1.711-.971-2.34-.255-.612-.515-.529-.709-.538-.182-.009-.391-.01-.599-.01-.208 0-.546.078-.831.39-.285.312-1.088 1.066-1.088 2.601 0 1.535 1.115 3.018 1.272 3.226.156.208 2.195 3.352 5.318 4.701.742.32 1.321.512 1.771.654.746.237 1.425.204 1.961.124.598-.091 1.845-.754 2.107-1.444.262-.689.262-1.282.184-1.404-.079-.123-.289-.196-.599-.352z">
+            </path>
+        </svg>
+    </a>
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-primary-container border-t border-primary-fixed-dim/20">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto text-on-primary">
+            <div class="col-span-12 lg:col-span-4 space-y-stack-md">
+                <div class="flex items-center gap-4">
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-primary">Shourex Global</span>
+                </div>
+                <p class="font-body-md text-on-primary-fixed-variant max-w-sm">
+                    Connecting premium Indian produce with global demand through excellence in logistics and
+                    uncompromised quality.
+                </p>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Navigation</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="about.html">About Us</a></li> 
+                    <li><a class="text-on-primary font-bold underline"
+                            href="products.html">Products</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="certificate.html">Certifications</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-span-6 lg:col-span-2 space-y-4">
+                <h6 class="font-label-caps text-gold">Legal</h6>
+                <ul class="space-y-2">
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors"
+                            href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-span-12 lg:col-span-4 space-y-4">
+                <h6 class="font-label-caps text-gold">Global Office</h6>
+                <p class="text-on-primary-fixed-variant font-body-md">
+                    Pune, Maharashtra, India<br />
+                    Email: akash.chaudhari@shourex.com<br />
+                    Phone: +91 810 810 9622
+                </p>
+                <div class="flex gap-4 mt-stack-md">
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="https://www.google.com/maps/place/Shourex+Global/@18.520452,73.856787,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2bf2d5f8b8f8f:0x8d9d9d9d9d9d9d9d!8m2!3d18.520452!4d73.856787"
+                        target="_blank">
+                        <span class="material-symbols-outlined text-white">public</span>
+                    </a>
+                    <a class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all"
+                        href="mailto:akash.chaudhari@shourex.com">
+                        <span class="material-symbols-outlined text-white">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-12 pt-12 border-t border-white/10 text-center">
+                <p class="font-body-md text-on-primary-fixed-variant">
+                    © 2026 Shourex Global – Delivering Quality Beyond Borders. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple logic for the active filter highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sticky-filter ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'font-bold');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-primary', 'font-bold');
+                    link.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+
+        // Mobile Sidebar Logic
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-sidebar-close');
+
+        const openSidebar = () => {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.add('translate-x-0');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+            openBtn.setAttribute('aria-expanded', 'true');
+            closeBtn.focus();
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+            openBtn.setAttribute('aria-expanded', 'false');
+            openBtn.focus();
+        };
+
+        if (openBtn && closeBtn && backdrop) {
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            backdrop.addEventListener('click', closeSidebar);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('translate-x-0')) {
+                    closeSidebar();
+                }
+            });
+
+            // Focus trapping inside sidebar
+            const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+            sidebar.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    const focusableElements = sidebar.querySelectorAll(focusableElementsSelector);
+                    if (focusableElements.length === 0) return;
+                    
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+                    
+                    if (e.shiftKey) { // Shift + Tab
+                        if (document.activeElement === firstElement) {
+                            lastElement.focus();
+                            e.preventDefault();
+                        }
+                    } else { // Tab
+                        if (document.activeElement === lastElement) {
+                            firstElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
